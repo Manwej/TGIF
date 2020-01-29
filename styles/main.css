@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100%;
+  overflow: scroll;
+}
+.nav-logo {
+  height: 4vh;
+  width: 3vw;
+  margin-left: 20px;
+}
+.jumbotron h1 {
+  margin-top: 60px;
+}
