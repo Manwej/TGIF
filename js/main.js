@@ -1,6 +1,8 @@
 console.log("hello");
 
 let members = data.results[0].members;
+//let link = data.results[0].members[i].api_uri;
+
 // make array with relevant info
 let memberobject = [];
 for (i = 0; i < members.length; i++) {
@@ -20,22 +22,34 @@ console.log(memberobject);
 for (i = 0; i < memberobject.length; i++) {
   let tr = document.createElement("tr"); // Create a <tr> node
   let oneMember = memberobject[i];
+  //let link = data.results[0].members[i].api_uri;
   for (const property in oneMember) {
     let td = document.createElement("td");
+    let a = document.createElement("a");
+
     //let hello = `${oneMember[voteswithparty]}`;
     //console.log(typeof oneMember.voteswithparty);
     if (typeof oneMember[property] === "number") {
       console.log("hello");
-      td.innerHTML = `${oneMember[property]}` + "<p> %</p>";
+      //console.log(`${property}: ${oneMember[property]}`);
+      td.innerHTML = `${oneMember[property]}` + " %";
     } else if (oneMember[property] === null) {
       td.innerHTML = " ";
+    } else if (`${property}` == "firstname") {
+      console.log(members[i].api_url);
+      td.innerHTML =
+        "<a href='" +
+        memberobject.api_url +
+        "'>" +
+        `${oneMember[property]}` +
+        "</a>";
     } else {
       td.innerHTML = `${oneMember[property]}`;
     }
     //td.innerHTML = `${oneMember[property]}`;
     tr.appendChild(td);
   }
-  document.getElementById("senate-data").appendChild(tr);
+  document.getElementById("data").appendChild(tr);
 }
 
 //  //console.log(`${property}: ${object[property]}`);

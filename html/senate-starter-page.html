@@ -11,6 +11,7 @@
     <link rel="icon" href="" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <script src="https://kit.fontawesome.com/f6a8051032.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../styles/main.css" />
 
     <title>TGIF</title>
@@ -39,31 +40,23 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/TGIF/html/home-starter-page.html"
+            <a class="nav-link" href="/TGIF/html/index.html"
               >Home <span class="sr-only">(current)</span></a
             >
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
+        
           <li class="nav-item dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              Dropdown button
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="../html/senate-starter-page.html"
-                >Senate</a
-              >
-              <a class="dropdown-item" href="../html/house-starter-page.html"
-                >House</a
-              >
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">Congress 102</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="../html/senate-starter-page.html">Senate</a>
+              <a class="dropdown-item" href="../html/house-starter-page.html">House</a>
             </div>
           </li>
         </ul>
+      </div>
+      <div class="email">
+        <a href="mailto:info@tgif.com"><i class="far fa-envelope"></i> info@tgif.com</a>
       </div>
     </nav>
 
@@ -112,7 +105,7 @@
               <th>Total votes</th>
             </tr>
           </thead>
-          <tbody id="senate-data">
+          <tbody id="data">
           </tbody>
         </table>
       </div>
