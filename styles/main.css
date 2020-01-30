@@ -19,3 +19,6 @@ body {
   background-size: cover;
   color: white;
 }
+.invisible {
+  height: 0px;
+}

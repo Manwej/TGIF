@@ -1,8 +1,5 @@
-console.log("hello");
-
+// fill table with json data
 let members = data.results[0].members;
-//let link = data.results[0].members[i].api_uri;
-
 // make array with relevant info
 let memberobject = [];
 for (i = 0; i < members.length; i++) {
@@ -25,21 +22,16 @@ for (i = 0; i < memberobject.length; i++) {
   //let link = data.results[0].members[i].api_uri;
   for (const property in oneMember) {
     let td = document.createElement("td");
-    let a = document.createElement("a");
-
     //let hello = `${oneMember[voteswithparty]}`;
-    //console.log(typeof oneMember.voteswithparty);
     if (typeof oneMember[property] === "number") {
       console.log("hello");
-      //console.log(`${property}: ${oneMember[property]}`);
       td.innerHTML = `${oneMember[property]}` + " %";
     } else if (oneMember[property] === null) {
       td.innerHTML = " ";
     } else if (`${property}` == "firstname") {
-      console.log(members[i].api_url);
       td.innerHTML =
         "<a href='" +
-        memberobject.api_url +
+        members[i].api_uri +
         "'>" +
         `${oneMember[property]}` +
         "</a>";
