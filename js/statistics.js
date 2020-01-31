@@ -2,87 +2,134 @@
 // clean up the code to work on values in declared object and not rewritingwriting the entire object all the time
 
 // some magic for the Attendance and Senate at a Glance
-let sAtGlance = {
+let Statistics = {
   atGlance: [
     {
-      name: "democrats",
+      name: "Democrats",
       number: 0,
-      ptc: 0
+      pct: 0
     },
     {
-      name: "total",
+      name: "Republican",
       number: 0,
-      ptc: 0
+      pct: 0
+    },
+    {
+      name: "Independent",
+      number: 0,
+      pct: 0
+    },
+    {
+      name: "Total",
+      number: 0,
+      pct: 0
     }
   ],
-  numofdemcrat: 0,
-  numofdrep: 0,
-  numofindi: 0,
-  numtotal: 0,
-  voteswpartydemo: 0,
-  voteswpartyrep: 0,
-  voteswpartyindi: 0,
-  votestotal: 0 // if this is a average, the total of % votes make no sense ??
+  least_engaged: [
+    {
+      name: "name1",
+      no_missed_votes: 0,
+      pct_missed: 0
+    },
+    {
+      name: "name2",
+      no_missed_votes: 0,
+      pct_missed: 0
+    },
+    {
+      name: "name3",
+      no_missed_votes: 0,
+      pct_missed: 0
+    }
+  ],
+  most_engaged: [
+    {
+      name: "name1",
+      no_missed_votes: 0,
+      pct_missed: 0
+    },
+    {
+      name: "name2",
+      no_missed_votes: 0,
+      pct_missed: 0
+    },
+    {
+      name: "name3",
+      no_missed_votes: 0,
+      pct_missed: 0
+    }
+  ]
 };
-
-//create three lists for each party
-let createPoliticianList = obj => {
-  let members = data.results[0].members;
-  let democratslist = [];
-  let republicanlist = [];
-  let independentlist = [];
-
+let members = data.results[0].members;
+const avgPct = (a, b) => {
+  let sum = 0;
+  let avg;
+  sum = sum + a;
+  avg = sum / b;
+  return avg;
+};
+// count party members and update object
+const glanceParty = obj => {
   for (i = 0; i < members.length; i++) {
-    let newInfo = {
-      firstname: members[i].first_name,
-      middlename: members[i].middle_name,
-      lastname: members[i].last_name,
-      party: members[i].party,
-      totalvotes: members[i].total_votes,
-      missedvotes: members[i].missed_votes,
-      voteswithparty: members[i].votes_with_party_pct
-    };
-    democratslist.push(newInfo);
-
     if (members[i].party == "D") {
-      democratslist.push(newInfo);
-      sAtGlance.numofdemcrat++;
+      Statistics.atGlance[0].number++;
+      Statistics.atGlance[0].pct += members[i].votes_with_party_pct;
     } else if (members[i].party == "R") {
-      republicanlist.push(newInfo);
+      Statistics.atGlance[1].number++;
+      if (typeof members[i].votes_with_party_pct == "number") {
+        Statistics.atGlance[1].pct += members[i].votes_with_party_pct;
+      } else {
+        Statistics.atGlance[1].pct += 0;
+      }
     } else if (members[i].party == "I") {
-      independentlist.push(newInfo);
+      Statistics.atGlance[2].number++;
+      Statistics.atGlance[2].pct += members[i].votes_with_party_pct;
     }
   }
-  return [democratslist, republicanlist, independentlist];
-};
-
-let getLength = () => {
-  let arr = createPoliticianList(data);
-  sAtGlance.numofdemcrat = arr[0].length;
-  let numofdrep = arr[1].length;
-  let numofindi = arr[2].length;
-  return [numofdemcrat, numofdrep, numofindi];
-};
-let sumUp = arr => {
-  let summe = 0;
-  for (i = 0; i < arr.length; i++) {
-    summe += arr[i];
+  for (i = 0; i < 3; i++) {
+    if (Statistics.atGlance[i].pct == 0) {
+      Statistics.atGlance[i].pct = 0;
+    } else {
+      let num = avgPct(
+        Statistics.atGlance[i].pct,
+        Statistics.atGlance[i].number
+      );
+      Statistics.atGlance[i].pct = Math.floor(num * 100) / 100;
+    }
   }
-  return summe;
+  Statistics.atGlance[3].number = members.length; // assign total value
 };
-let length = getLength();
-let numtotal = sumUp(length);
+glanceParty(data);
+console.log(Statistics);
 
-console.log(length);
-sAtGlance = {
-  numofdemcrat: length[0],
-  numofdrep: length[1],
-  numofindi: length[2],
-  numtotal: sumUp(length),
-  voteswpartydemo: 0,
-  voteswpartyrep: 0,
-  voteswpartyindi: 0,
-  votestotal: 0 // if this is a average, the total of % votes make no sense ??
-};
+/* old code */
+//create three lists for each party
+// let createPoliticianList = obj => {
+//   let members = data.results[0].members;
+//   let democratslist = [];
+//   let republicanlist = [];
+//   let independentlist = [];
 
-console.log(sAtGlance);
+//   for (i = 0; i < members.length; i++) {
+//     let newInfo = {
+//       firstname: members[i].first_name,
+//       middlename: members[i].middle_name,
+//       lastname: members[i].last_name,
+//       party: members[i].party,
+//       totalvotes: members[i].total_votes,
+//       missedvotes: members[i].missed_votes,
+//       voteswithparty: members[i].votes_with_party_pct
+//     };
+//     democratslist.push(newInfo);
+
+//     if (members[i].party == "D") {
+//       democratslist.push(newInfo);
+//       sAtGlance.numofdemcrat++;
+//     } else if (members[i].party == "R") {
+//       republicanlist.push(newInfo);
+//     } else if (members[i].party == "I") {
+//       independentlist.push(newInfo);
+//     }
+//   }
+//   return [democratslist, republicanlist, independentlist];
+// };
