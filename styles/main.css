@@ -22,3 +22,6 @@ body {
 .invisible {
   height: 0px;
 }
+.subpage {
+  margin-top: 80px;
+}

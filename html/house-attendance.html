@@ -25,7 +25,7 @@
 
   <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="/TGIF/html/home-starter-page.html">
+      <a class="navbar-brand" href="/TGIF/html/index.html">
         <img class="nav-logo" src="/TGIF/design_items/america.png" alt="icon" />
       </a>
       <button
@@ -43,7 +43,7 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/TGIF/html/home-starter-page.html"
+            <a class="nav-link" href="/TGIF/html/index.html"
               >Home <span class="sr-only">(current)</span></a
             >
           </li>
@@ -114,8 +114,9 @@
       </div>
     </nav>
     <!--Table container-->
+    <hr />
     <div class="container">
-      <div>
+      <div class="subpage">
         <h2>Attendance</h2>
         <p>
           The Constitution specifies that a majority of members constitutes a
@@ -134,7 +135,7 @@
           may (if present) cast the tiebreaking vote.
         </p>
 
-        <h2>Senate at a glance</h2>
+        <h2>House at a glance</h2>
         <table class="table">
           <thead>
             <tr>
@@ -147,7 +148,7 @@
         </table>
 
         <h2>Least Engaged (Bottom 10% Attendance)</h2>
-        <table>
+        <table class="table">
           <thead>
             <tr>
               <th>Name</th>
@@ -155,42 +156,11 @@
               <th>% Missed</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-            </tr>
-            <tr>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-            </tr>
-            <tr>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-            </tr>
-            <tr>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-            </tr>
-            <tr>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-            </tr>
-            <tr>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-            </tr>
-          </tbody>
+          <tbody id="least-data"></tbody>
         </table>
 
         <h2>Most Engaged (Top 10% Attendance)</h2>
-        <table>
+        <table class="table">
           <thead>
             <tr>
               <th>Name</th>
@@ -198,43 +168,7 @@
               <th>% Missed</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-            </tr>
-            <tr>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-            </tr>
-            <tr>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-            </tr>
-            <tr>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-            </tr>
-            <tr>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-            </tr>
-            <tr>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-            </tr>
-            <tr>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-            </tr>
-          </tbody>
+          <tbody id="most-data"></tbody>
         </table>
       </div>
     </div>
@@ -262,6 +196,6 @@
     ></script>
     <script src="../js/pro-Congress-102-house.js"></script>
     <script src="../js/statistics.js"></script>
-    <script src="../js/tables-senate-atly.js"></script>
+    <script src="../js/tables.js"></script>
   </body>
 </html>

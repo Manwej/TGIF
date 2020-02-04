@@ -117,127 +117,71 @@
 
     <div class="container">
       <!--Table container-->
-      <div>
-        <h2>Attendance</h2>
-        <p>
-          The Constitution specifies that a majority of members constitutes a
-          quorum to do business in each house. Representatives and senators
-          rarely force the presence of a quorum by demanding quorum calls; thus,
-          in most cases, debates continue even if a majority is not present.
-        </p>
+      <div class="subpage">
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Attendance</h2>
+            <p>
+              The Constitution specifies that a majority of members constitutes
+              a quorum to do business in each house. Representatives and
+              senators rarely force the presence of a quorum by demanding quorum
+              calls; thus, in most cases, debates continue even if a majority is
+              not present.
+            </p>
 
-        <p>
-          The Senate uses roll-call votes; a clerk calls out the names of all
-          the senators, each senator stating "aye" or "no" when his or her name
-          is announced. The House reserves roll-call votes for the most formal
-          matters, as a roll-call of all 435 representatives takes quite some
-          time; normally, members vote by electronic device. In the case of a
-          tie, the motion in question fails. In the Senate, the Vice President
-          may (if present) cast the tiebreaking vote.
-        </p>
-
-        <h2>Senate at a glance</h2>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Party</th>
-              <th>Number of Reps</th>
-              <th>% Voted with Prty</th>
-            </tr>
-          </thead>
-          <tbody id="data"></tbody>
-        </table>
-
-        <h2>Least Engaged (Bottom 10% Attendance)</h2>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Number of Missed Votes</th>
-              <th>% Missed</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-            </tr>
-            <tr>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-            </tr>
-            <tr>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-            </tr>
-            <tr>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-            </tr>
-            <tr>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-            </tr>
-            <tr>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h2>Most Engaged (Top 10% Attendance)</h2>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Number of Missed Votes</th>
-              <th>% Missed</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-            </tr>
-            <tr>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-            </tr>
-            <tr>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-            </tr>
-            <tr>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-            </tr>
-            <tr>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-            </tr>
-            <tr>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-            </tr>
-            <tr>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-            </tr>
-          </tbody>
-        </table>
+            <p>
+              The Senate uses roll-call votes; a clerk calls out the names of
+              all the senators, each senator stating "aye" or "no" when his or
+              her name is announced. The House reserves roll-call votes for the
+              most formal matters, as a roll-call of all 435 representatives
+              takes quite some time; normally, members vote by electronic
+              device. In the case of a tie, the motion in question fails. In the
+              Senate, the Vice President may (if present) cast the tiebreaking
+              vote.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <h2>Senate at a glance</h2>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Party</th>
+                  <th>Number of Reps</th>
+                  <th>% Voted with Prty</th>
+                </tr>
+              </thead>
+              <tbody id="data"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Least Engaged (Bottom 10% Attendance)</h2>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Number of Missed Votes</th>
+                  <th>% Missed</th>
+                </tr>
+              </thead>
+              <tbody id="least-data"></tbody>
+            </table>
+          </div>
+          <div class="col-md-12">
+            <h2>Most Engaged (Top 10% Attendance)</h2>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Number of Missed Votes</th>
+                  <th>% Missed</th>
+                </tr>
+              </thead>
+              <tbody id="most-data"></tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -264,6 +208,6 @@
     ></script>
     <script src="../js/pro-Congress-102-senate.js"></script>
     <script src="../js/statistics.js"></script>
-    <script src="../js/tables-senate-atly.js"></script>
+    <script src="../js/tables.js"></script>
   </body>
 </html>
