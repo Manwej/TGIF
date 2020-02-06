@@ -15,8 +15,6 @@ const makeGlanceTable = obj => {
 makeGlanceTable(Statistics);
 
 const makeTable = (obj, val) => {
-  console.log(val);
-  console.log(Statistics[val]);
   // if (val == true) {
   let leasttable = Statistics[val];
   for (i = 0; i < leasttable.length; i++) {
@@ -27,12 +25,15 @@ const makeTable = (obj, val) => {
       td.innerHTML = `${oneRow[property]}`;
       tr.appendChild(td);
     }
-    if (val == "least_engaged") {
+    if (val == "least_engaged" || val == "least_loyal") {
       document.getElementById("least-data").appendChild(tr);
-    } else {
+    } else if (val == "most_engaged" || val == "most_loyal") {
       document.getElementById("most-data").appendChild(tr);
     }
   }
 };
 makeTable(Statistics, "least_engaged");
 makeTable(Statistics, "most_engaged");
+
+makeTable(Statistics, "least_loyal");
+makeTable(Statistics, "most_loyal");

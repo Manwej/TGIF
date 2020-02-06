@@ -20,6 +20,8 @@ makeArr(data);
 
 //create a tr for each member
 const fillTable = obj => {
+  const table = document.getElementById("data");
+  table.innerHTML = "";
   for (i = 0; i < obj.length; i++) {
     let tr = document.createElement("tr"); // Create a <tr> node
     let oneMember = obj[i];
@@ -38,7 +40,8 @@ const fillTable = obj => {
 
       tr.appendChild(td);
     }
-    document.getElementById("data").appendChild(tr);
+    table.appendChild(tr);
   }
+  return obj;
 };
 fillTable(makeArr(data));

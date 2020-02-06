@@ -27,7 +27,7 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/TGIF/html/home-starter-page.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/TGIF/html/index.html">Home <span class="sr-only">(current)</span></a>
           </li>
   
           <li class="nav-item dropdown">
@@ -97,6 +97,24 @@
           uniformed officers, as well as trial of federal officials impeached by
           the House.
         </p>
+        <div class="input-group mb-3">
+          
+            <div>
+              <input type="checkbox" aria-label="Checkbox for following text input" id="repcheck" value="R">
+              <label for="repcheck">Republican</label>
+              <input type="checkbox" aria-label="Checkbox for following text input" id="demcheck" value="D">
+              <label for="demcheck">Democrats</label>
+              <input type="checkbox" aria-label="Checkbox for following text input" id="indcheck" value="I">
+              <label for="indcheck">Independent</label>
+            </div>
+            <div>
+              <label for="inputGroupSelect01">Filter by State</label>
+              <select class="custom-select" id="inputGroupSelect01">
+                <option selected id="all">ALL</option>
+              </select>
+            </div>
+          
+        </div>
         <table class="table">
           <thead>
             <tr>
@@ -127,6 +145,8 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="../js/pro-Congress-102-senate.js"></script>
   <script src="../js/main.js"></script>
+  <script src="../js/filter.js"></script>
+
   </body>
   
   </html>
