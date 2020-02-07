@@ -68,7 +68,16 @@ const glanceParty = obj => {
       Statistics.atGlance[i].pct = Math.floor(num * 100) / 100;
     }
   }
-  Statistics.atGlance[3].number = members.length; // assign total value
+  Statistics.atGlance[3].number = members.length;
+  Statistics.atGlance[3].pct =
+    Math.floor(
+      ((Statistics.atGlance[0].pct +
+        Statistics.atGlance[1].pct +
+        Statistics.atGlance[2].pct) /
+        3) *
+        100
+    ) / 100; // assign total value
+  // assign total value
 };
 glanceParty(data);
 
@@ -79,13 +88,14 @@ const missedVotes = obj => {
 
   for (i = 0; i < obj.length; i++) {
     let mVotes = {
-      name: obj[i].last_name,
+      name: obj[i].first_name + " " + obj[i].last_name,
       missed_votes: obj[i].missed_votes,
       missed_votes_pct: obj[i].missed_votes_pct
     };
 
     votes.push(mVotes);
   }
+
   return votes;
 };
 //if (obj[i].missed_votes !== 0 || obj[j].missed_votes !== null ||obj[i].missed_votes_pct !== 0 || obj[j].missed_votes_pct !== null) {
@@ -96,7 +106,7 @@ const partyVotes = obj => {
     let votesWp = (obj[i].votes_with_party_pct / 100) * obj[i].total_votes;
     votesWp = Math.floor(votesWp);
     let partyVotes = {
-      name: obj[i].last_name,
+      name: obj[i].first_name + " " + obj[i].last_name,
       votes_with_party_pct: obj[i].votes_with_party_pct,
       votes: obj[i].total_votes,
       votes_with_party: votesWp
@@ -123,15 +133,19 @@ let sortedPvotes = bubbleSort(partyVotes(members), "votes_with_party_pct");
 
 const engaged = (obj, bol, val1, val2) => {
   let tenpct = Statistics.atGlance[3].number * 0.1;
+
   tenpct = Math.floor(tenpct);
+
   if (bol == true) {
+    // console.log(obj[tenpct][val1]);
+    // console.log(obj[tenpct + 1][val1]);
+    if (
+      obj[tenpct - 1][val1] == obj[tenpct][val1] ||
+      obj[tenpct - 1][val2] == obj[tenpct][val2]
+    ) {
+      tenpct++;
+    }
     for (i = 0; i < tenpct; i++) {
-      if (
-        obj[tenpct][val1] == obj[tenpct + 1][val1] ||
-        obj[tenpct][val2] == obj[tenpct + 1][val2]
-      ) {
-        tenpct++;
-      }
       if (val1 == "missed_votes") {
         let lEngaged = {
           name: obj[i].name,
@@ -175,23 +189,44 @@ const engaged = (obj, bol, val1, val2) => {
   }
 };
 
-let whuuuut = document.getElementsByClassName("det")[0].innerText;
-let whuuuut2 = document.getElementsByClassName("det")[1].innerText;
+// let siteDet = document.getElementsByTagName("title").innerText;
+// let whuuuut2 = document.getElementsByClassName("det")[1].innerText;
 
-if (whuuuut == "Attendance" && whuuuut2 == "Senate at a glance") {
-  engaged(sortedMvotes, true, "missed_votes", "missed_votes_pct");
-  engaged(sortedMvotes, false, "missed_votes", "missed_votes_pct");
-} else if (whuuuut == "Attendance" && whuuuut2 == "House at a glance") {
-  engaged(sortedMvotes, true, "missed_votes", "missed_votes_pct");
-  engaged(sortedMvotes, false, "missed_votes", "missed_votes_pct");
-} else if (whuuuut == "Party Loyalty" && whuuuut2 == "Senate at a glance") {
-  engaged(sortedPvotes, true, "votes_with_party", "votes_with_party_pct");
-  engaged(sortedPvotes, false, "votes_with_party", "votes_with_party_pct");
-} else if (whuuuut == "Party Loyalty" && whuuuut2 == "House at a glance") {
-  engaged(sortedPvotes, true, "votes_with_party", "votes_with_party_pct");
-  engaged(sortedPvotes, false, "votes_with_party", "votes_with_party_pct");
+// if (whuuuut == "Attendance" && whuuuut2 == "Senate at a glance") {
+//   engaged(sortedMvotes, true, "missed_votes", "missed_votes_pct");
+//   engaged(sortedMvotes, false, "missed_votes", "missed_votes_pct");
+// } else if (whuuuut == "Attendance" && whuuuut2 == "House at a glance") {
+//   engaged(sortedMvotes, true, "missed_votes", "missed_votes_pct");
+//   engaged(sortedMvotes, false, "missed_votes", "missed_votes_pct");
+// } else if (whuuuut == "Party Loyalty" && whuuuut2 == "Senate at a glance") {
+//   engaged(sortedPvotes, true, "votes_with_party", "votes_with_party_pct");
+//   engaged(sortedPvotes, false, "votes_with_party", "votes_with_party_pct");
+// } else if (whuuuut == "Party Loyalty" && whuuuut2 == "House at a glance") {
+//   engaged(sortedPvotes, true, "votes_with_party", "votes_with_party_pct");
+//   engaged(sortedPvotes, false, "votes_with_party", "votes_with_party_pct");
+// }
+
+let siteDeterminant = document.getElementsByTagName("title")[0].innerHTML;
+
+switch (siteDeterminant) {
+  case "Senate Attendance":
+    engaged(sortedMvotes, true, "missed_votes", "missed_votes_pct");
+    engaged(sortedMvotes, false, "missed_votes", "missed_votes_pct");
+    break;
+  case "House Attendance":
+    engaged(sortedMvotes, true, "missed_votes", "missed_votes_pct");
+    engaged(sortedMvotes, false, "missed_votes", "missed_votes_pct");
+    break;
+  case "Senate Loyalty":
+    engaged(sortedPvotes, true, "votes_with_party", "votes_with_party_pct");
+    engaged(sortedPvotes, false, "votes_with_party", "votes_with_party_pct");
+    break;
+  case "House Loyalty":
+    engaged(sortedPvotes, true, "votes_with_party", "votes_with_party_pct");
+    engaged(sortedPvotes, false, "votes_with_party", "votes_with_party_pct");
+    break;
+
+  default:
+    console.log("Sorry, something went wrong");
 }
-
 //use switch and change titel instead of two det classes
-
-// sortedPvotes;

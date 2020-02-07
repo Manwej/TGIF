@@ -22,7 +22,11 @@ const makeTable = (obj, val) => {
     let oneRow = leasttable[i];
     for (const property in oneRow) {
       let td = document.createElement("td");
-      td.innerHTML = `${oneRow[property]}`;
+      if (`${property}` == "name") {
+        td.innerHTML = `<a href='${members[i].api_uri}'>${oneRow[property]}</a>`;
+      } else {
+        td.innerHTML = `${oneRow[property]}`;
+      }
       tr.appendChild(td);
     }
     if (val == "least_engaged" || val == "least_loyal") {

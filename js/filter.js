@@ -2,72 +2,73 @@ let repBtn = document.getElementById("repcheck");
 let demBtn = document.getElementById("demcheck");
 let indBtn = document.getElementById("indcheck");
 
-// making array of checkbox values, loop needed for retrieving values. than make new list by comparing to the array of vaule ("R","D", "I")
-const test = () => {
+// making array of checkbox values ("R","D", "I")
+const checkBox = () => {
   //making array of checkboxnodes
   var checkboxes = Array.from(
     document.querySelectorAll("input[type=checkbox]:checked")
   );
-  console.log(checkboxes);
+  let check = []; //getting values insteaad of nodes
+  for (i = 0; i < checkboxes.length; i++) {
+    check.push(checkboxes[i].value);
+  }
+  return check;
 };
 
+// listeting for clicks on checkboxes
 repBtn.addEventListener("change", () => {
-  test();
-  if (repBtn.checked) {
-    console.log("helloR");
-    // delRows();
-    fillTable(makeFilterArray("R"));
-  } else {
-    console.log("helloR2");
-    // delRows();
-    fillTable(makeArr(data));
-  }
+  let check = checkBox(); // get array of checked checkboxes
+  //let arr = makeArr(data);
+  let filtered = makeFilterArray(); // calling function from below that filters and fills table
 });
-demBtn.addEventListener("change", () => {
-  test();
-  if (demBtn.checked) {
-    console.log("helloD");
-    // delRows();
-    fillTable(makeFilterArray("D"));
-  } else {
-    console.log("helloD2");
-    // delRows();
-    fillTable(makeArr(data));
-  }
-});
-indBtn.addEventListener("change", () => {
-  test();
-  if (indBtn.checked) {
-    console.log("helloI");
-    // delRows();
-    fillTable(makeFilterArray("I"));
-  } else {
-    console.log("helloI2");
-    // delRows();
-    fillTable(makeArr(data));
-  }
-});
-const makeFilterArray = str => {
-  let arr = makeArr(data);
-  let filterarr = [];
-  arr.forEach(element => {
-    if (element.party == str) {
-      filterarr.push(element);
-    }
-  });
-  return filterarr;
-};
-// const delRows = () => {
-//   var elmTable = document.getElementById("data");
-//   var tableRows = elmTable.getElementsByTagName("tr");
-//   var rowCount = tableRows.length;
-//   for (let i = rowCount - 1; i >= 0; i--) {
-//     elmTable.removeChild(tableRows[i]);
-//   }
-// };
-//______________---------------------___________--------------________----------_-_-_-_-__-_---_-
-// Dropdown Filter for Region
 
+demBtn.addEventListener("change", () => {
+  let check = checkBox();
+  //let arr = makeArr(data);
+  let filtered = makeFilterArray();
+});
+
+indBtn.addEventListener("change", () => {
+  let check = checkBox();
+  //let arr = makeArr(data);
+  let filtered = makeFilterArray();
+});
+
+const makeFilterArray = () => {
+  let check = checkBox(); // gets array with filterboxes taht are checked
+  let state = document.getElementById("inputGroupSelect01").value; // gets value from dropdown for states
+  let members = makeArr(data); // makes usable array with function from main.js using data from json data
+  let filterarr = []; // creating new empty array that serves as temp to populate new array
+  if (check.length == 0 && state == "ALL") {
+    // case 1: NO Checkboxes; NO Dropdown states => default state
+    filterarr = members;
+  } else {
+    members.forEach(element => {
+      if (check.length !== 0 && state == "ALL") {
+        // case 2: YES Checkboxes are checked; NO Dropdown states
+        //filterarr = members; // think this is unneccessary JL 7.2.20
+        if (check.includes(element.party)) {
+          filterarr.push(element);
+        }
+      } else if (check.length == 0 && state !== "ALL") {
+        // case 3: NO Checkboxes are checked; YES Dropdown states
+        if (element.state == state) {
+          filterarr.push(element);
+        }
+      } else {
+        if (check.includes(element.party) && element.state == state) {
+          // case 4: YES Checkboxes are checked; YES Dropdown states
+
+          filterarr.push(element);
+        }
+      }
+    }); // end of foreach=> temp array fiterarry is full of desired data
+  }
+  fillTable(filterarr);
+};
+
+//--------------------------------------------------------------
+// Dropdown Filter for Region
 // count states function
 const countStates = arr => {
   let cStates = [];
@@ -78,6 +79,7 @@ const countStates = arr => {
   }
   return cStates;
 };
+// DOM manipulation to fill Dropdown
 const fillDropdown = () => {
   let arr = makeArr(data);
   let states = [];
@@ -88,45 +90,29 @@ const fillDropdown = () => {
     states.push(state);
   }
   let listOfSortedStates = states.sort(dynamicSort("state"));
-  //   console.log(listOfSortedStates[1].state);
+
   let listSingleStates = countStates(listOfSortedStates);
 
-  //let input = document.getElementById("inputGroupSelect01");
   for (i = 0; i < listSingleStates.length; i++) {
     let opt = document.createElement("option");
     opt.setAttribute("id", listSingleStates[i]);
+    opt.setAttribute("value", listSingleStates[i]);
+
     opt.innerHTML = listSingleStates[i];
     document.getElementById("inputGroupSelect01").appendChild(opt);
   }
   return listSingleStates;
 };
 fillDropdown();
-
+// Sort algorithm to sort the States array
 function dynamicSort(property) {
   return function(a, b) {
     return a[property].localeCompare(b[property]);
   };
 }
-// const dropFilter = () => {
-//   console.log("hello");
-//   //   let filter = fillDropdown();
-//   //   for (i = 0; i < filter.length; i++) {
-//   //     dropOption = document.getElementById(filter[i]);
-//   //     dropOption.addEventListener("change", () => {
-//   //       console.log("hello");
-//   //     });
-//   // }
-// };
-dropOption = document.getElementById("inputGroupSelect01");
-console.log(dropOption);
-dropOption.addEventListener("change", () => {
-  console.log("hello");
-});
-//   event => {
-//     if (event.target.id == "ALL") {
-//       console.log("hello");
-//     }
-//   },
-//   false
-// );
-//dropFilter();
+// eventlistener for drop down usage
+document
+  .getElementById("inputGroupSelect01")
+  .addEventListener("change", event => {
+    makeFilterArray();
+  });
