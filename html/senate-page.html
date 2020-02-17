@@ -2,109 +2,140 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <meta name="description" content="" />
     <meta name="author" content="" />
     <link rel="icon" href="../../../../favicon.ico" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-    <script src="https://kit.fontawesome.com/f6a8051032.js" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/f6a8051032.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="../styles/main.css" />
-  
-    <title>Senate Page</title>
-  </head>
-  
-  <body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="/TGIF/html/home-starter-page.html">
-        <img class="nav-logo" src="/TGIF/design_items/america.png" alt="icon" />
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-        aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/TGIF/html/index.html">Home <span class="sr-only">(current)</span></a>
-          </li>
-  
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">Congress 102</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="../html/senate-page.html">Senate</a>
-              <a class="dropdown-item" href="../html/house-page.html">House</a>
-            </div>
-          </li>
-  
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">Attendance</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="../html/senate-attendance.html">Senate</a>
-              <a class="dropdown-item" href="../html/house-attendance.html">House</a>
-            </div>
-          </li>
-  
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">Party Loyalty</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="../html/senate-party-loyalty.html">Senate</a>
-              <a class="dropdown-item" href="../html/house-party-loyalty.html">House</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="email">
-        <a href="mailto:info@tgif.com"><i class="far fa-envelope"></i> info@tgif.com</a>
-      </div>
-    </nav>
 
-    <main role="main">
-      <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <div class="container">
-          <h1 class="display-3">Transparent Government in Fact</h1>
+    <title>Senate Data</title>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-2 px-0 fixed-top" id="left">
+          <div class="nav-row nav1">
+            <div class="nav-logo1">
+              <a href="home.html"
+                ><img src="../design_items/gov_logo.png" alt="logo"
+              /></a>
+            </div>
+            <div class="nav-content">
+              <ul class="list-group w-100">
+                <li class="list-group-item">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    data-toggle="collapse"
+                    href="#collapseExample"
+                    aria-controls="collapseExample"
+                  >
+                    Home
+                  </a>
+                  <div class="collapse" id="collapseExample">
+                    <a href="home.html#about">About</a>
+                  </div>
+                </li>
+
+                <li class="list-group-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    data-toggle="collapse"
+                    href="#dropdown01"
+                    aria-controls="collapseExample"
+                    >Congress 113</a
+                  >
+                  <div class="collapse" id="dropdown01">
+                    <a href="../html/senate-page.html">Senate <br /></a>
+                    <a href="../html/house-page.html">House</a>
+                  </div>
+                </li>
+
+                <li class="list-group-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    data-toggle="collapse"
+                    href="#dropdown02"
+                    aria-controls="collapseExample"
+                  >
+                    Attendance</a
+                  >
+                  <div class="collapse" id="dropdown02">
+                    <a href="../html/senate-attendance.html">Senate <br /></a>
+                    <a href="../html/house-attendance.html">House</a>
+                  </div>
+                </li>
+                <li class="list-group-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    data-toggle="collapse"
+                    href="#dropdown03"
+                    aria-controls="collapseExample"
+                  >
+                    Party Loyalty</a
+                  >
+                  <div class="collapse" id="dropdown03">
+                    <a href="../html/senate-party-loyalty.html"
+                      >Senate <br
+                    /></a>
+                    <a href="../html/house-party-loyalty.html">House</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+        <!--Table container-->
+        <hr />
+        <div class="col offset-2 h-100 p-5">
+          <h2>Senators</h2>
           <p>
-            Make Government Great again! Yes we can! <br />
-            People who work in government are either crooks or morons. We are
-            both! <br />
-            If you think politics is a waste of your time, you are right!
+            First convened in 1789, the composition and powers of the Senate are
+            established in Article One of the U.S. Constitution. Each state is
+            represented by two senators, regardless of population, who serve
+            staggered six-year terms. The Senate has several exclusive powers
+            not granted to the House, including consenting to treaties as a
+            precondition to their ratification and consenting to or confirming
+            appointments of Cabinet secretaries, federal judges, other federal
+            executive officials, military officers, regulatory officials,
+            ambassadors, and other federal uniformed officers, as well as trial
+            of federal officials impeached by the House.
           </p>
-          <p>
-            <a class="btn btn-primary btn-lg"
-              href="https://www.whitehouse.gov/the_press_office/TransparencyandOpenGovernment" role="button">Learn more
-              &raquo;</a>
-          </p>
-        </div>
-      </div>
-    <!--Table container-->
-    <div class="container">
-      <div>
-        <h2>Senators</h2>
-        <p>
-          First convened in 1789, the composition and powers of the Senate are
-          established in Article One of the U.S. Constitution. Each state is
-          represented by two senators, regardless of population, who serve
-          staggered six-year terms. The Senate has several exclusive powers not
-          granted to the House, including consenting to treaties as a precondition
-          to their ratification and consenting to or confirming appointments of
-          Cabinet secretaries, federal judges, other federal executive officials,
-          military officers, regulatory officials, ambassadors, and other federal
-          uniformed officers, as well as trial of federal officials impeached by
-          the House.
-        </p>
-        <div class="input-group mb-3">
-          
+          <div class="input-group mb-3">
             <div>
-              <input type="checkbox" aria-label="Checkbox for following text input" id="repcheck" value="R">
+              <input
+                type="checkbox"
+                aria-label="Checkbox for following text input"
+                id="repcheck"
+                value="R"
+              />
               <label for="repcheck">Republican</label>
-              <input type="checkbox" aria-label="Checkbox for following text input" id="demcheck" value="D">
+              <input
+                type="checkbox"
+                aria-label="Checkbox for following text input"
+                id="demcheck"
+                value="D"
+              />
               <label for="demcheck">Democrats</label>
-              <input type="checkbox" aria-label="Checkbox for following text input" id="indcheck" value="I">
+              <input
+                type="checkbox"
+                aria-label="Checkbox for following text input"
+                id="indcheck"
+                value="I"
+              />
               <label for="indcheck">Independent</label>
             </div>
             <div>
@@ -113,41 +144,59 @@
                 <option selected id="all">ALL</option>
               </select>
             </div>
-          
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>First name</th>
+                <th>Middle name</th>
+                <th>Last name</th>
+                <th>Party</th>
+                <th>State</th>
+                <th>Total votes</th>
+              </tr>
+            </thead>
+            <tbody id="data"></tbody>
+          </table>
+          <div class="loading">
+            <div id="loader" class="lds-spinner ">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
         </div>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>First name</th>
-              <th>Middle name</th>
-              <th>Last name</th>
-              <th>Party</th>
-              <th>State</th>
-              <th>Total votes</th>
-            </tr>
-          </thead>
-          <tbody id="data">
-          </tbody>
-        </table>
       </div>
     </div>
-<footer class="footer">
-  <div class="container">
-    <span class="text-muted">&copy; TGIF 2020</span>
-  </div>
-</footer>
-  
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="../js/pro-Congress-102-senate.js"></script>
-  <script src="../js/main.js"></script>
-  <script src="../js/filter.js"></script>
 
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="../js/113-senate.js"></script> -->
+    <script src="../js/fetch.js"></script>
+
+    <script src="../js/main.js"></script>
+    <!-- <script src="../js/filter.js"></script> -->
   </body>
-  
-  </html>
-
+</html>

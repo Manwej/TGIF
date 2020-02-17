@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+html {
+  height: 100%;
+}
 body {
   height: 100%;
   overflow: scroll;
@@ -44,4 +47,220 @@ body {
 }
 .input-group div:nth-child(2) select {
   height: 100%;
+}
+
+/* Test for new layout*/
+.nav-left {
+  background-color: black;
+  font-family: "Roboto", sans-serif;
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+}
+.nav-left a {
+  color: white;
+}
+.container-fluid {
+  height: 100%;
+}
+/* .container-fluid .row {
+  height: 100%;
+} */
+.herosection {
+  background-image: url(https://images.unsplash.com/photo-1575320181282-9afab399332c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  color: black;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-right: 0;
+  overflow-x: hidden;
+}
+.text-home h1 {
+  font-size: 6em;
+  font-weight: 800;
+}
+.text-home {
+  margin-left: 30px;
+}
+
+.nav1 {
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  flex-direction: column;
+}
+.nav-row,
+.list-group-item {
+  background-color: black;
+}
+aside {
+  height: 100%;
+  background-color: black;
+}
+.list-group-item a {
+  color: white;
+  padding: 2px;
+}
+/* .nav-content ul {
+  list-style-type: none;
+  font-size: 1.2em;
+  font-weight: 1.2em;
+  line-height: 2em;
+}
+.nav-content ul li div a {
+  margin-left: 20%;
+} */
+a:hover {
+  color: #80aaff;
+  text-decoration: none;
+  font-weight: none;
+}
+.card {
+  background-color: white;
+  border-color: white;
+}
+.row .bg-white {
+  height: 80%;
+}
+.row .bg-light {
+  height: 100%;
+}
+.col-5 .py-4 {
+  display: flex;
+  align-content: center;
+}
+/* Style for contact form*/
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+form {
+  height: 100%;
+}
+.input-group-prepend {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.card-header .btn-link {
+  color: black;
+  font-size: 1em;
+  font-weight: 800;
+}
+.nav-logo1 img {
+  height: 40px;
+}
+.nav-logo1 {
+  padding-bottom: 100%;
+  padding-top: 20%;
+}
+.image-deluxe {
+  width: 100%;
+  height: 100%;
+}
+.col {
+  overflow-x: hidden;
+}
+/* SPinner css */
+.lds-spinner {
+  color: official;
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-spinner div {
+  transform-origin: 40px 40px;
+  animation: lds-spinner 1.2s linear infinite;
+}
+.lds-spinner div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 37px;
+  width: 6px;
+  height: 18px;
+  border-radius: 20%;
+  background: black;
+}
+.lds-spinner div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -1.1s;
+}
+.lds-spinner div:nth-child(2) {
+  transform: rotate(30deg);
+  animation-delay: -1s;
+}
+.lds-spinner div:nth-child(3) {
+  transform: rotate(60deg);
+  animation-delay: -0.9s;
+}
+.lds-spinner div:nth-child(4) {
+  transform: rotate(90deg);
+  animation-delay: -0.8s;
+}
+.lds-spinner div:nth-child(5) {
+  transform: rotate(120deg);
+  animation-delay: -0.7s;
+}
+.lds-spinner div:nth-child(6) {
+  transform: rotate(150deg);
+  animation-delay: -0.6s;
+}
+.lds-spinner div:nth-child(7) {
+  transform: rotate(180deg);
+  animation-delay: -0.5s;
+}
+.lds-spinner div:nth-child(8) {
+  transform: rotate(210deg);
+  animation-delay: -0.4s;
+}
+.lds-spinner div:nth-child(9) {
+  transform: rotate(240deg);
+  animation-delay: -0.3s;
+}
+.lds-spinner div:nth-child(10) {
+  transform: rotate(270deg);
+  animation-delay: -0.2s;
+}
+.lds-spinner div:nth-child(11) {
+  transform: rotate(300deg);
+  animation-delay: -0.1s;
+}
+.lds-spinner div:nth-child(12) {
+  transform: rotate(330deg);
+  animation-delay: 0s;
+}
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.loading {
+  display: flex;
+  justify-content: center;
 }

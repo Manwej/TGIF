@@ -20,176 +20,200 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="../styles/main.css" />
-
     <title>Senate Attendance</title>
   </head>
-
   <body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="/TGIF/html/index.html">
-        <img class="nav-logo" src="/TGIF/design_items/america.png" alt="icon" />
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarsExampleDefault"
-        aria-controls="navbarsExampleDefault"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/TGIF/html/index.html"
-              >Home <span class="sr-only">(current)</span></a
-            >
-          </li>
-
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="dropdown01"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-              >Congress 102</a
-            >
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="../html/senate-page.html"
-                >Senate</a
-              >
-              <a class="dropdown-item" href="../html/house-page.html">House</a>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-2 px-0 fixed-top" id="left">
+          <div class="nav-row nav1">
+            <div class="nav-logo1">
+              <a href="home.html"
+                ><img src="../design_items/gov_logo.png" alt="logo"
+              /></a>
             </div>
-          </li>
+            <div class="nav-content">
+              <ul class="list-group w-100">
+                <li class="list-group-item">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    data-toggle="collapse"
+                    href="#collapseExample"
+                    aria-controls="collapseExample"
+                  >
+                    Home
+                  </a>
+                  <div class="collapse" id="collapseExample">
+                    <a href="home.html#about">About</a>
+                  </div>
+                </li>
+                <li class="list-group-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    data-toggle="collapse"
+                    href="#dropdown01"
+                    aria-controls="collapseExample"
+                    >Congress 113</a
+                  >
+                  <div class="collapse" id="dropdown01">
+                    <a href="../html/senate-page.html">Senate <br /></a>
+                    <a href="../html/house-page.html">House</a>
+                  </div>
+                </li>
 
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="dropdown01"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-              >Attendance</a
-            >
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="../html/senate-attendance.html"
-                >Senate</a
-              >
-              <a class="dropdown-item" href="../html/house-attendance.html"
-                >House</a
-              >
+                <li class="list-group-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    data-toggle="collapse"
+                    href="#dropdown02"
+                    aria-controls="collapseExample"
+                  >
+                    Attendance</a
+                  >
+                  <div class="collapse" id="dropdown02">
+                    <a href="../html/senate-attendance.html">Senate <br /></a>
+                    <a href="../html/house-attendance.html">House</a>
+                  </div>
+                </li>
+                <li class="list-group-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    data-toggle="collapse"
+                    href="#dropdown03"
+                    aria-controls="collapseExample"
+                  >
+                    Party Loyalty</a
+                  >
+                  <div class="collapse" id="dropdown03">
+                    <a href="../html/senate-party-loyalty.html"
+                      >Senate <br
+                    /></a>
+                    <a href="../html/house-party-loyalty.html">House</a>
+                  </div>
+                </li>
+              </ul>
             </div>
-          </li>
+          </div>
+        </aside>
+        <!--Table container-->
+        <hr />
+        <div class="col offset-2 h-100 p-5">
+          <div class="row">
+            <div class="col-6">
+              <h2>Attendance</h2>
 
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="dropdown01"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-              >Party Loyalty</a
-            >
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="../html/senate-party-loyalty.html"
-                >Senate</a
-              >
-              <a class="dropdown-item" href="../html/house-party-loyalty.html"
-                >House</a
-              >
+              <p>
+                The Constitution specifies that a majority of members
+                constitutes a quorum to do business in each house.
+                Representatives and senators rarely force the presence of a
+                quorum by demanding quorum calls; thus, in most cases, debates
+                continue even if a majority is not present.
+              </p>
+
+              <p>
+                The Senate uses roll-call votes; a clerk calls out the names of
+                all the senators, each senator stating "aye" or "no" when his or
+                her name is announced. The House reserves roll-call votes for
+                the most formal matters, as a roll-call of all 435
+                representatives takes quite some time; normally, members vote by
+                electronic device. In the case of a tie, the motion in question
+                fails. In the Senate, the Vice President may (if present) cast
+                the tiebreaking vote.
+              </p>
             </div>
-          </li>
-        </ul>
-      </div>
-      <div class="email">
-        <a href="mailto:info@tgif.com"
-          ><i class="far fa-envelope"></i> info@tgif.com</a
-        >
-      </div>
-    </nav>
-
-    <div class="container">
-      <!--Table container-->
-      <div class="subpage">
-        <div class="row">
-          <div class="col-md-6">
-            <h2 class="det">Attendance</h2>
-            <p>
-              The Constitution specifies that a majority of members constitutes
-              a quorum to do business in each house. Representatives and
-              senators rarely force the presence of a quorum by demanding quorum
-              calls; thus, in most cases, debates continue even if a majority is
-              not present.
-            </p>
-
-            <p>
-              The Senate uses roll-call votes; a clerk calls out the names of
-              all the senators, each senator stating "aye" or "no" when his or
-              her name is announced. The House reserves roll-call votes for the
-              most formal matters, as a roll-call of all 435 representatives
-              takes quite some time; normally, members vote by electronic
-              device. In the case of a tie, the motion in question fails. In the
-              Senate, the Vice President may (if present) cast the tiebreaking
-              vote.
-            </p>
+            <div class="col-6">
+              <h2>Senate at a glance</h2>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Party</th>
+                    <th>Number of Reps</th>
+                    <th>% Voted with Prty</th>
+                  </tr>
+                </thead>
+                <tbody id="data_glance"></tbody>
+              </table>
+              <div class="loading">
+                <div id="loader1" class="lds-spinner ">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="col-md-6">
-            <h2 class="det">Senate at a glance</h2>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Party</th>
-                  <th>Number of Reps</th>
-                  <th>% Voted with Prty</th>
-                </tr>
-              </thead>
-              <tbody id="data"></tbody>
-            </table>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <h2>Least Engaged (Bottom 10% Attendance)</h2>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Number of Missed Votes</th>
-                  <th>% Missed</th>
-                </tr>
-              </thead>
-              <tbody id="least-data"></tbody>
-            </table>
-          </div>
-          <div class="col-md-12">
-            <h2>Most Engaged (Top 10% Attendance)</h2>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Number of Missed Votes</th>
-                  <th>% Missed</th>
-                </tr>
-              </thead>
-              <tbody id="most-data"></tbody>
-            </table>
+          <div class="row">
+            <div class="col-6">
+              <h2>Least Engaged <br />(Bottom 10% Attendance)</h2>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Number of Missed Votes</th>
+                    <th>% Missed</th>
+                  </tr>
+                </thead>
+                <tbody id="least-data"></tbody>
+              </table>
+              <div class="loading">
+                <div id="loader2" class="lds-spinner ">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <h2>Most Engaged <br />(Top 10% Attendance)</h2>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Number of Missed Votes</th>
+                    <th>% Missed</th>
+                  </tr>
+                </thead>
+                <tbody id="most-data"></tbody>
+              </table>
+              <div class="loading">
+                <div id="loader3" class="lds-spinner ">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-    <footer class="footer">
-      <div class="container">
-        <span class="text-muted">&copy; TGIF 2020</span>
-      </div>
-    </footer>
 
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -206,8 +230,11 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
-    <script src="../js/pro-Congress-102-senate.js"></script>
+    <script src="../js/fetch.js"></script>
+    <script src="../js/main.js"></script>
     <script src="../js/statistics.js"></script>
-    <script src="../js/tables.js"></script>
+
+    <!-- <script src="../js/statistics.js"></script>
+    <script src="../js/tables.js"></script> -->
   </body>
 </html>

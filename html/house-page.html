@@ -9,144 +9,199 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <link rel="icon" href="../../../../favicon.ico" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/f6a8051032.js" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/f6a8051032.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="../styles/main.css" />
 
-    <title>TGIF</title>
+    <title>House Data</title>
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="/TGIF/html/home-starter-page.html">
-        <img class="nav-logo" src="/TGIF/design_items/america.png" alt="icon" />
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-        aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/TGIF/html/home-starter-page.html">Home <span class="sr-only">(current)</span></a>
-          </li>
-    
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">Congress 102</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="../html/senate-page.html">Senate</a>
-              <a class="dropdown-item" href="../html/house-page.html">House</a>
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-2 px-0 fixed-top" id="left">
+          <div class="nav-row nav1">
+            <div class="nav-logo1">
+              <a href="home.html"
+                ><img src="../design_items/gov_logo.png" alt="logo"
+              /></a>
             </div>
-          </li>
-    
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">Attendance</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="../html/senate-attendance.html">Senate</a>
-              <a class="dropdown-item" href="../html/house-attendance.html">House</a>
+            <div class="nav-content">
+              <ul class="list-group w-100">
+                <li class="list-group-item">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    data-toggle="collapse"
+                    href="#collapseExample"
+                    aria-controls="collapseExample"
+                  >
+                    Home
+                  </a>
+                  <div class="collapse" id="collapseExample">
+                    <a href="home.html#about">About</a>
+                  </div>
+                </li>
+
+                <li class="list-group-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    data-toggle="collapse"
+                    href="#dropdown01"
+                    aria-controls="collapseExample"
+                    >Congress 113</a
+                  >
+                  <div class="collapse" id="dropdown01">
+                    <a href="../html/senate-page.html">Senate <br /></a>
+                    <a href="../html/house-page.html">House</a>
+                  </div>
+                </li>
+
+                <li class="list-group-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    data-toggle="collapse"
+                    href="#dropdown02"
+                    aria-controls="collapseExample"
+                  >
+                    Attendance</a
+                  >
+                  <div class="collapse" id="dropdown02">
+                    <a href="../html/senate-attendance.html">Senate <br /></a>
+                    <a href="../html/house-attendance.html">House</a>
+                  </div>
+                </li>
+                <li class="list-group-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    data-toggle="collapse"
+                    href="#dropdown03"
+                    aria-controls="collapseExample"
+                  >
+                    Party Loyalty</a
+                  >
+                  <div class="collapse" id="dropdown03">
+                    <a href="../html/senate-party-loyalty.html"
+                      >Senate <br
+                    /></a>
+                    <a href="../html/house-party-loyalty.html">House</a>
+                  </div>
+                </li>
+              </ul>
             </div>
-          </li>
-    
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">Party Loyalty</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="../html/senate-party-loyalty.html">Senate</a>
-              <a class="dropdown-item" href="../html/house-party-loyalty.html">House</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="email">
-        <a href="mailto:info@tgif.com"><i class="far fa-envelope"></i> info@tgif.com</a>
-      </div>
-    </nav>
-    <!--Table container-->
-    <main role="main">
-      <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <div class="container">
-          <h1 class="display-3">Transparent Government in Fact</h1>
-          <p>
-            Make Government Great again! Yes we can! <br />
-            People who work in government are either crooks or morons. We are
-            both! <br />
-            If you think politics is a waste of your time, you are right!
-          </p>
-          <p>
-            <a class="btn btn-primary btn-lg"
-              href="https://www.whitehouse.gov/the_press_office/TransparencyandOpenGovernment" role="button">Learn more
-              &raquo;</a>
-          </p>
-        </div>
-      </div>
-      <div class="container">
-        <div>
+          </div>
+        </aside>
+        <!--Table container-->
+        <hr />
+        <div class="col offset-2 h-100 p-5">
           <h2>Congressmen</h2>
           <p>
-            The major power of the House is to pass federal legislation that affects
-            the entire country, although its bills must also be passed by the Senate
-            and further agreed to by the U.S. President before becoming law (unless
-            both the House and Senate re-pass the legislation with a two-thirds
-            majority in each chamber). The House has some exclusive powers: the
-            power to initiate revenue bills, to impeach officials (impeached
-            officials are subsequently tried in the Senate), and to elect the U.S.
-            President in case there is no majority in the Electoral College.
+            The major power of the House is to pass federal legislation that
+            affects the entire country, although its bills must also be passed
+            by the Senate and further agreed to by the U.S. President before
+            becoming law (unless both the House and Senate re-pass the
+            legislation with a two-thirds majority in each chamber). The House
+            has some exclusive powers: the power to initiate revenue bills, to
+            impeach officials (impeached officials are subsequently tried in the
+            Senate), and to elect the U.S. President in case there is no
+            majority in the Electoral College.
           </p>
           <p>
             Each U.S. state is represented in the House in proportion to its
-            population as measured in the census, but every state is entitled to at
-            least one representative.
+            population as measured in the census, but every state is entitled to
+            at least one representative.
           </p>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <div>
-                <input type="checkbox" aria-label="Checkbox for following text input" id="repcheck">
+                <input
+                  type="checkbox"
+                  aria-label="Checkbox for following text input"
+                  id="repcheck"
+                  value="R"
+                />
                 <label for="repcheck">Republican</label>
-                <input type="checkbox" aria-label="Checkbox for following text input" id="demcheck">
+                <input
+                  type="checkbox"
+                  aria-label="Checkbox for following text input"
+                  id="demcheck"
+                  value="D"
+                />
                 <label for="demcheck">Democrats</label>
-                <input type="checkbox" aria-label="Checkbox for following text input" id="indcheck">
+                <input
+                  type="checkbox"
+                  aria-label="Checkbox for following text input"
+                  id="indcheck"
+                  value="I"
+                />
                 <label for="indcheck">Independent</label>
+              </div>
+              <div>
+                <label for="inputGroupSelect01">Filter by State</label>
+                <select class="custom-select" id="inputGroupSelect01">
+                  <option selected id="all">ALL</option>
+                </select>
               </div>
             </div>
           </div>
-          <table class="table" >
+          <table class="table">
             <thead>
               <tr>
-                <th>Members</th>
                 <th>First name</th>
                 <th>Middle name</th>
                 <th>Last name</th>
                 <th>Party</th>
+                <th>State</th>
                 <th>Total votes</th>
               </tr>
             </thead>
-            <tbody id="data">
-            </tbody>
+            <tbody id="data"></tbody>
           </table>
+          <div class="loading">
+            <div id="loader" class="lds-spinner ">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
         </div>
       </div>
-    
-  <footer class="footer">
-    <div class="container">
-      <span class="text-muted">&copy; TGIF 2020</span>
     </div>
-  </footer>
-  
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="../js/pro-Congress-102-house.js"></script>
-  <script src="../js/main.js"></script>
-  <script src="../js/filter.js"></script>
-  </body>
-  
-  </html>
 
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/fetch.js"></script>
+
+    <script src="../js/main.js"></script>
+    <!-- <script src="../js/filter.js"></script> -->
+  </body>
+</html>
