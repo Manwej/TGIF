@@ -46,12 +46,6 @@ const masterController = members => {
     makeGlanceTable();
     makeEngagedTable(Statistics, "least_engaged");
     makeEngagedTable(Statistics, "most_engaged");
-
-    // getGlanceTableData(members);
-    // glanceTable(statistics.atAglance);
-    // getEngagedTableData(members);
-    // engagedTable(statistics.leastEngaged10pct, "leastEngagedtBody");
-    // engagedTable(statistics.mostEngaged10pct, "mostEngagedtBody");
   }
   if (document.title.includes("Loyalty")) {
     glancePartyLogic(makeTempArr(members));
@@ -61,11 +55,6 @@ const masterController = members => {
     makeGlanceTable();
     makeEngagedTable(Statistics, "least_loyal");
     makeEngagedTable(Statistics, "most_loyal");
-    // getGlanceTableData(members);
-    // glanceTable(statistics.atAglance);
-    // getLoyalTableData(members);
-    // loyalTable(statistics.leastLoyal10pct, "leastLoyaltBody");
-    // loyalTable(statistics.mostLoyal10pct, "mostLoyaltBody");
   }
 };
 

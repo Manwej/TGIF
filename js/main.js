@@ -38,7 +38,6 @@ const fillMainTable = obj => {
     }
     table.appendChild(tr);
   }
-  return obj;
 };
 // making array of checkbox values ("R","D", "I")
 const checkBox = () => {
@@ -125,5 +124,4 @@ const fillDropdown = obj => {
     opt.innerHTML = listOfSortedStates[i];
     document.getElementById("inputGroupSelect01").appendChild(opt);
   }
-  return listOfSortedStates;
 };

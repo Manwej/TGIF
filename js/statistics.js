@@ -254,9 +254,3 @@ const makeEngagedTable = (obj, val) => {
     }
   }
 };
-
-// makeEngagedTable(Statistics, "least_engaged");
-// makeEngagedTable(Statistics, "most_engaged");
-
-// makeEngagedTable(Statistics, "least_loyal");
-// makeEngagedTable(Statistics, "most_loyal");
