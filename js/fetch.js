@@ -12,7 +12,6 @@ let fetchEverything = url => {
     })
     .then(data => {
       members = data.results[0].members;
-
       masterController(members);
       loadingData();
     })
